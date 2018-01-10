@@ -27,6 +27,15 @@ body
 		right: 20px
 	box-sizing: border-box
 
+.mobile-menu
+	position: absolute
+	display: none
+	top: 10px
+	left: 10px
+	width: 40px
+	height: 40px
+	background-color: red
+
 ///////////////////////////
 //////// Navigation
 ///////////////////////////
@@ -71,6 +80,7 @@ body
 ///////////////////////////
 
 .main
+	position: relative
 	background-color: #f7f8f8
 	margin-left: 320px
 
@@ -147,6 +157,7 @@ body
 			bottom: 5px
 
 .card-number
+	font-size: 0
 	margin-bottom: 16px
 	&__item
 		width: 65px
@@ -157,7 +168,9 @@ body
 		font-size: 16px
 		line-height: 1.333
 		padding: 0 13px
-		margin-right: 5px
+		margin-right: 10px
+		&:last-child
+			margin-right: 0
 
 .card-validity
 	margin-bottom: 10px
@@ -183,6 +196,8 @@ body
 		padding: 0 13px
 
 .card
+	&--front
+		z-index: 5
 	&--back
 		position: absolute
 		right: 0
@@ -220,7 +235,10 @@ body
 		height: 26px
 		background: url('../img/q.png') no-repeat 0 0
 
-	
+///////////////////////////
+//////// Payment card
+///////////////////////////
+
 .infoblock
 	background-color: #373c43
 	padding: 15px 10px 15px 28px
@@ -228,3 +246,49 @@ body
 		color: #7f8591
 		font-size: 12px
 		line-height: 1.5
+
+///////////////////////////
+//////// Media
+///////////////////////////
+
+@media (max-width: 930px)
+	.card
+		position: relative
+		top: 0
+		margin-bottom: 20px
+
+@media (max-width: 768px)
+	.nav
+		width: 300px
+		position: fixed
+		right: 100%
+
+	.main
+		margin-left: 0
+
+	.wrapper
+		padding: 0 10px
+	
+	.mobile-menu
+		display: none
+@media (max-width: 480px)
+	.wrapper
+		padding: 0
+
+	.payment
+		padding:
+			left: 15px
+			right: 15px
+
+@media (max-width: 400px)
+	.card
+		width: 100%
+		min-height: 240px
+		height: auto
+	.card-number
+		&__item
+			width: 60px
+			padding:
+				left: 11px
+				right: 11px
+			margin-right: 5px

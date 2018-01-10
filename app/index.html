@@ -34,8 +34,8 @@
       <!-- Navigation End -->
       <!-- Main content -->
       <div class="main">
+        <div class="mobile-menu"></div>
         <section class="payment">
-
           <div class="payment-info">
             <p class="payment-info__title">Информация по оплате:</p>
             <table class="payment-info__table">
@@ -54,16 +54,7 @@
             <p class="payment-card__title">Данные банковской карты</p>
             <form class="payment-form" id="" action="POST">
               <div class="payment-form__inner">
-                <!-- card -->
-                <div class="card card--back">
-                  <div class="card__inner">
-                    <p class="card__title">Код CVV2 / CVC2</p>
-                    <div class="card-safety">
-                      <input class="card-safety__item" type="text">
-                    </div>
-                  </div>
-                </div>
-                <!-- card end -->
+                
                 <!-- card -->
                 <div class="card card--front">
                   <p class="card__title">Номер карты</p>
@@ -98,6 +89,16 @@
                   </div>
                 </div>
                 <!-- card end-->
+                <!-- card -->
+                <div class="card card--back">
+                  <div class="card__inner">
+                    <p class="card__title">Код CVV2 / CVC2</p>
+                    <div class="card-safety">
+                      <input class="card-safety__item" type="text">
+                    </div>
+                  </div>
+                </div>
+                <!-- card end -->
               </div>
               <div class="payment-form__buttons">
                 <button class="payment-form__button" type="submit">Оплатить</button>
