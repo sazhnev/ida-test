@@ -1,0 +1,230 @@
+@font-face
+	font-family: 'OpenSans'
+	src: url('../fonts/Open Sans Bold.ttf')
+
+$fontLightGrey: #8494ab
+$fontDarkGrey: #535864
+
+.clearfix
+	display: table
+	content: ''
+	clear: both
+a
+	text-decoration: none
+body
+	width: 100%
+	height: 100%
+	background-color: #101114
+	font-family: 'Arial'
+
+.wrapper
+	position: relative
+	max-width: 1000px
+	width: 100%
+	margin: 0 auto
+	padding:
+		left: 20px
+		right: 20px
+	box-sizing: border-box
+
+///////////////////////////
+//////// Navigation
+///////////////////////////
+.nav
+	width: 320px
+	position: absolute
+	top: 0
+	&__list
+		list-style: none
+		padding:
+			left: 0
+		margin: 0
+	&__item
+		&:last-child
+			.nav__link
+				border-top: 1px solid #20232b
+	&__link
+		padding:
+			top: 26px
+			bottom: 26px
+			left: 28px
+		background-color: #1f2229
+		display: block
+		color: #fff
+		font-family: 'OpenSans'
+		font-size: 18px
+		line-height: 1.333
+		transition: color 0.3s ease
+		&--dark
+			background-color: #191c24
+		&--active
+			color: #808592
+			background-color: #2a2d37
+		&:not(.nav__link--active)
+			&:hover
+				color: #52caff
+				color: #8edcff
+		
+		
+///////////////////////////
+//////// Main
+///////////////////////////
+
+.main
+	background-color: #f7f8f8
+	margin-left: 320px
+
+.payment
+	padding: 27px 28px 10px
+
+.payment-info
+	overflow: auto
+	&__table
+		border-collapse: collapse
+	&__title
+		color: $fontLightGrey
+		font-size: 16px
+		line-height: 1.333
+		margin-bottom: 18px
+	td
+		font-size: 16px
+		line-height: 1.333
+		padding: 0 0 6px
+	&__name
+		width: 160px
+		color: $fontLightGrey
+	&__value
+		color: $fontDarkGrey
+
+.payment-form
+	&__inner
+		position: relative
+		min-height: 277px
+	&__buttons
+		margin-bottom: 28px
+	&__button
+		background: linear-gradient(to bottom, #005abf 0%,#004ca2 100%)
+		border: none
+		color: #fff
+		font-size: 14px
+		line-height: 18px
+		font-family: 'OpenSans'
+		padding: 11px 30px
+		border-radius: 20px
+		cursor: pointer
+		// transition: all 0.3s
+		&:hover
+			background: linear-gradient(to top, #005abf 0%,#004ca2 100%)
+
+///////////////////////////
+//////// Payment card
+///////////////////////////
+
+.payment-card
+	position: relative
+	padding-top: 1px
+	&__title
+		color: #383d43
+		font-size: 22px
+		font-family: 'OpenSans'
+		margin-bottom: 23px
+
+
+
+.card
+	position: absolute
+	box-sizing: border-box
+	border: 1px solid #e4e9ee
+	border-radius: 10px
+	width: 350px
+	height: 236px
+	padding: 14px
+	background-color: #f7f8f8
+	&__title
+		color: #8494ab
+		margin:
+			top: 8px
+			bottom: 5px
+
+.card-number
+	margin-bottom: 16px
+	&__item
+		width: 65px
+		height: 42px
+		box-sizing: border-box
+		border: 1px solid #e4e9ee
+		color: #373c43
+		font-size: 16px
+		line-height: 1.333
+		padding: 0 13px
+		margin-right: 5px
+
+.card-validity
+	margin-bottom: 10px
+	&__select
+		height: 42px
+		box-sizing: border-box
+		border: 1px solid #e4e9ee
+		color: #373c43
+		font-size: 16px
+		line-height: 1.333
+		padding: 0 13px
+		margin-right: 5px
+
+.card-owner
+	&__item
+		height: 42px
+		width: 100%
+		box-sizing: border-box
+		border: 1px solid #e4e9ee
+		color: #373c43
+		font-size: 16px
+		line-height: 1.333
+		padding: 0 13px
+
+.card
+	&--back
+		position: absolute
+		right: 0
+		top: 20px
+		&::after
+			position: absolute
+			content: ''
+			left: 0 
+			top: 25px
+			height: 42px
+			width: 100%
+			background-color: #e4e9ee
+		.card
+			&__inner
+				padding-top: 62px
+				float: right
+
+.card-safety
+	position: relative
+	&__item
+		height: 42px
+		width: 138px
+		box-sizing: border-box
+		border: 1px solid #e4e9ee
+		color: #373c43
+		font-size: 16px
+		line-height: 1.333
+		padding: 0 40px 0 13px
+	&::after
+		position: absolute
+		content: ''
+		right: 8px
+		top: 7px
+		width: 26px
+		height: 26px
+		background: url('../img/q.png') no-repeat 0 0
+
+	
+.infoblock
+	background-color: #373c43
+	padding: 15px 10px 15px 28px
+	&__text
+		color: #7f8591
+		font-size: 12px
+		line-height: 1.5
