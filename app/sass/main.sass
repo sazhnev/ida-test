@@ -18,9 +18,7 @@ body
 	font-family: 'Arial'
 	transition: transform .3s ease
 
-.open-menu
-	transform: translateX(265px)
-	overflow: hidden
+
 .wrapper
 	position: relative
 	max-width: 1000px
@@ -252,6 +250,7 @@ body
 		font-size: 16px
 		line-height: 1.333
 		padding: 0 13px
+		text-transform: uppercase
 
 .card
 	&--front
@@ -325,19 +324,24 @@ body
 	.main
 		margin-left: 0
 
+	.payment
+		padding:
+			left: 15px
+			right: 15px
+
 	.wrapper
 		padding: 0
 	
 	.burger
 		display: block
+
+	.open-menu
+		transform: translateX(265px)
+		overflow: hidden
+
 @media (max-width: 480px)
 	.wrapper
 		padding: 0
-
-	.payment
-		padding:
-			left: 15px
-			right: 15px
 
 @media (max-width: 400px)
 	.card
@@ -351,3 +355,11 @@ body
 				left: 11px
 				right: 11px
 			margin-right: 5px
+
+///////////////////////////
+//////// JS
+///////////////////////////
+
+.js-error
+	border: 1px solid red
+	box-shadow: 0 0 0 1px red

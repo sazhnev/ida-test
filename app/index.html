@@ -56,21 +56,22 @@
 
           <div class="payment-card">
             <p class="payment-card__title">Данные банковской карты</p>
-            <form class="payment-form" id="" action="POST">
+            <form class="payment-form" id="payment-form" action="POST">
               <div class="payment-form__inner">
                 
                 <!-- card -->
                 <div class="card card--front">
                   <p class="card__title">Номер карты</p>
                   <div class="card-number">
-                    <input class="card-number__item" type="text">
-                    <input class="card-number__item" type="text">
-                    <input class="card-number__item" type="text">
-                    <input class="card-number__item" type="text">
+                    <input class="card-number__item" type="text" maxlength="4">
+                    <input class="card-number__item" type="text" maxlength="4">
+                    <input class="card-number__item" type="text" maxlength="4">
+                    <input class="card-number__item" type="text" maxlength="4">
                   </div>
                   <p class="card__title">Срок действия</p>
                   <div class="card-validity">
                     <select class="card-validity__select" name="" id="month">
+                      <option value="default"></option>
                       <option value="">01</option>
                       <option value="">02</option>
                       <option value="">03</option>
@@ -78,6 +79,7 @@
                       <option value="">05</option>
                     </select>
                     <select class="card-validity__select" name="" id="year">
+                      <option value="default"></option>
                       <option value="">2018</option>
                       <option value="">2019</option>
                       <option value="">2020</option>
@@ -98,7 +100,7 @@
                   <div class="card__inner">
                     <p class="card__title">Код CVV2 / CVC2</p>
                     <div class="card-safety">
-                      <input class="card-safety__item" type="text">
+                      <input class="card-safety__item" type="text" maxlength="3">
                     </div>
                   </div>
                 </div>
