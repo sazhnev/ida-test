@@ -19,7 +19,7 @@ body
 	transition: transform .3s ease
 
 .open-menu
-	transform: translateX(300px)
+	transform: translateX(265px)
 	overflow: hidden
 .wrapper
 	position: relative
@@ -30,7 +30,7 @@ body
 		left: 20px
 		right: 20px
 	box-sizing: border-box
-	
+
 ///////////////////////////
 //////// Burger
 ///////////////////////////
@@ -110,6 +110,10 @@ body
 			top: 26px
 			bottom: 26px
 			left: 28px
+			right: 10px
+		white-space: nowrap
+		overflow: hidden
+		text-overflow: ellipsis
 		background-color: #1f2229
 		display: block
 		color: #fff
@@ -117,6 +121,7 @@ body
 		font-size: 18px
 		line-height: 1.333
 		transition: color 0.3s ease
+
 		&--dark
 			background-color: #191c24
 		&--active
@@ -312,7 +317,7 @@ body
 
 @media (max-width: 768px)
 	.nav
-		width: 300px
+		width: 265px
 		position: absolute
 		top: 0
 		right: 100%
@@ -321,7 +326,7 @@ body
 		margin-left: 0
 
 	.wrapper
-		padding: 0 10px
+		padding: 0
 	
 	.burger
 		display: block

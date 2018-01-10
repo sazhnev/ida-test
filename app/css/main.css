@@ -26,9 +26,9 @@ body {
 }
 
 .open-menu {
-  -webkit-transform: translateX(300px);
-      -ms-transform: translateX(300px);
-          transform: translateX(300px);
+  -webkit-transform: translateX(265px);
+      -ms-transform: translateX(265px);
+          transform: translateX(265px);
   overflow: hidden;
 }
 
@@ -167,6 +167,11 @@ body {
   padding-top: 26px;
   padding-bottom: 26px;
   padding-left: 28px;
+  padding-right: 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  -o-text-overflow: ellipsis;
+     text-overflow: ellipsis;
   background-color: #1f2229;
   display: block;
   color: #fff;
@@ -417,7 +422,7 @@ body {
 
 @media (max-width: 768px) {
   .nav {
-    width: 300px;
+    width: 265px;
     position: absolute;
     top: 0;
     right: 100%;
@@ -426,7 +431,7 @@ body {
     margin-left: 0;
   }
   .wrapper {
-    padding: 0 10px;
+    padding: 0;
   }
   .burger {
     display: block;
