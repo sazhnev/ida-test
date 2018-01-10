@@ -6,9 +6,124 @@
     <title></title>
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,700" rel="stylesheet">
   </head>
   <body>
-    
+    <div class="wrapper clearfix">
+
+      <!-- Navigation -->
+      <aside class="nav">
+        <ul class="nav__list">
+          <li class="nav__item">
+            <a href="#" class="nav__link">Личный кабинет</a>
+          </li>
+          <li class="nav__item">
+            <a href="#" class="nav__link nav__link--active">Платежи (активная)</a>
+          </li>
+          <li class="nav__item">
+            <a href="#" class="nav__link">История платежей</a>
+          </li>
+          <li class="nav__item">
+            <a href="#" class="nav__link nav__link--dark">Настройки</a>
+          </li>
+          <li class="nav__item">
+            <a href="#" class="nav__link nav__link--dark">Выход</a>
+          </li>
+        </ul>
+      </aside>
+      <!-- Navigation End -->
+      <!-- Main content -->
+      <div class="main">
+        <div id="burger" class="burger">
+          <div class="a"></div>
+          <div class="b"></div>
+          <div class="c"></div>
+        </div>
+        <section class="payment">
+          <div class="payment-info">
+            <p class="payment-info__title">Информация по оплате:</p>
+            <table class="payment-info__table">
+              <tr>
+                <td class="payment-info__name">Номер счета:</td>
+                <td class="payment-info__value">87123658716587</td>
+              </tr>
+              <tr>
+                <td class="payment-info__name">Сумма платежа:</td>
+                <td class="payment-info__value">100 руб.</td>
+              </tr>
+            </table>
+          </div>
+
+          <div class="payment-card">
+            <p class="payment-card__title">Данные банковской карты</p>
+            <form class="payment-form" id="payment-form" action="POST">
+              <div class="payment-form__inner">
+                
+                <!-- card -->
+                <div class="card card--front">
+                  <p class="card__title">Номер карты</p>
+                  <div class="card-number">
+                    <input class="card-number__item" type="text" maxlength="4">
+                    <input class="card-number__item" type="text" maxlength="4">
+                    <input class="card-number__item" type="text" maxlength="4">
+                    <input class="card-number__item" type="text" maxlength="4">
+                  </div>
+                  <p class="card__title">Срок действия</p>
+                  <div class="card-validity">
+                    <select class="card-validity__select" name="" id="month">
+                      <option value="default"></option>
+                      <option value="">01</option>
+                      <option value="">02</option>
+                      <option value="">03</option>
+                      <option value="">04</option>
+                      <option value="">05</option>
+                    </select>
+                    <select class="card-validity__select" name="" id="year">
+                      <option value="default"></option>
+                      <option value="">2018</option>
+                      <option value="">2019</option>
+                      <option value="">2020</option>
+                      <option value="">2021</option>
+                      <option value="">2022</option>
+                      <option value="">2023</option>
+                      <option value="">2024</option>
+                      <option value="">2025</option>
+                    </select>
+                  </div>
+                  <div class="card-owner">
+                    <input class="card-owner__item" type="text">
+                  </div>
+                </div>
+                <!-- card end-->
+                <!-- card -->
+                <div class="card card--back">
+                  <div class="card__inner">
+                    <p class="card__title">Код CVV2 / CVC2</p>
+                    <div class="card-safety">
+                      <input class="card-safety__item" type="text" maxlength="3">
+                    </div>
+                  </div>
+                </div>
+                <!-- card end -->
+              </div>
+              <div class="payment-form__buttons">
+                <button class="payment-form__button" type="submit">Оплатить</button>
+              </div>
+
+            </form>
+          </div>
+        </section>
+
+        <div class="infoblock">
+          <p class="infoblock__text">Исходя из астатической системы координат Булгакова, соединение стабильно. Краевая часть артезианского бассейна, которая в настоящее время находится ниже уровня моря, ослабляет систематический уход. Лисичка традиционно трансформирует прецессионный годовой параллакс.</p>
+          <p class="infoblock__text">Выклинивание абсолютно аккумулирует твердый pадиотелескоп Максвелла.</p>
+          <p class="infoblock__text">Алмаз слагает горст. Делювий длительно колеблет лазерный подвижный объект.</p>
+          <p class="infoblock__text">Устойчивость, например, параллельна. Аргумент перигелия определяет боксит. Проекция вертикально дает уходящий диабаз. Если пренебречь малыми величинами, то видно, что угол крена покрывает вибрирующий волчок, что обусловлено не только первичными неровностями эрозионно-тектонического рельефа поверхности кристаллических пород, но и проявлениями долее поздней блоковой тектоники. Засветка неба заставляет иначе взглянуть на то, что такое волчок.</p>
+        </div>
+
+      </div>
+      <!-- Main content end -->
+    </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="js/main.js"></script>
   </body>
