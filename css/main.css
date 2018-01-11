@@ -475,6 +475,7 @@ select {
     -webkit-transform: translateX(265px);
         -ms-transform: translateX(265px);
             transform: translateX(265px);
+    position: fixed;
     overflow: hidden;
   }
 }
