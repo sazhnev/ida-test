@@ -213,6 +213,7 @@ body {
   font-size: 16px;
   line-height: 1.333;
   margin-bottom: 18px;
+  font-weight: normal;
 }
 
 .payment-info td {
@@ -317,9 +318,31 @@ body {
 
 .card-validity {
   margin-bottom: 10px;
+  font-size: 0;
+}
+
+.card-validity__inner {
+  position: relative;
+  display: inline-block;
+  background: #fff;
+}
+
+.card-validity__inner:after {
+  position: absolute;
+  content: '';
+  width: 16px;
+  height: 8px;
+  background: url("../img/spritesheet.png") no-repeat -10px -10px;
+  top: 17px;
+  right: 8px;
+}
+
+.card-validity__inner:not(:last-child) {
+  margin-right: 9px;
 }
 
 .card-validity__select {
+  position: relative;
   height: 42px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -327,8 +350,22 @@ body {
   color: #373c43;
   font-size: 16px;
   line-height: 1.333;
-  padding: 0 13px;
-  margin-right: 5px;
+  padding: 0 30px 0 10px;
+  background-color: transparent;
+  z-index: 20;
+  min-width: 70px;
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  text-indent: 1px;
+  -o-text-overflow: '';
+     text-overflow: '';
 }
 
 .card-owner__item {
@@ -392,7 +429,7 @@ body {
   top: 7px;
   width: 26px;
   height: 26px;
-  background: url("../img/q.png") no-repeat 0 0;
+  background: url("../img/spritesheet.png") no-repeat -46px -10px;
 }
 
 .infoblock {
