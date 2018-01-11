@@ -1,132 +1,119 @@
-// Mobile menu
-(function() {
+var form = document.getElementById('payment-form');
+
+form.addEventListener('submit', function(e) {
+	e.preventDefault();
+	myFunc.validate();
+});
+
+var myFunc = {
+	errorArr: [],
+
+	validate: function() {
+
+		this.errorArr = [];
+		this.validateCard();
+		this.validateSelect();
+		this.validateSafety();
+		this.validateOwner();
+
+		if (this.errorArr.length == 0) {
+			form.submit();
+		}
+
+	},
+
+	validateCard: function() {
+
+		var cardsNumber = document.querySelectorAll('.card-number input');
+		var regexCard = /^([0-9]{4})+$/;
+
+		for (var i = 0; i < cardsNumber.length; i++) {
+
+			if (!regexCard.test(cardsNumber[i].value)) {
+
+				this.errorSignal(cardsNumber[i], false);
+				this.errorArr.push(cardsNumber[i]);
+
+			} else {
+
+				this.errorSignal(cardsNumber[i], true);
+
+			}
+			
+		}
+
+	},
+
+	validateSelect: function() {
+
+		var selects = document.querySelectorAll('.card-validity__select');
+
+		for (var i = 0; i < selects.length; i++) {
+
+			if (selects[i].value == '') {
+
+				this.errorSignal(selects[i], false);
+				this.errorArr.push(selects[i]);
+
+			} else {
+
+				this.errorSignal(selects[i], true);
+
+			}
+
+		}
+
+	},
+
+	validateSafety: function() {
+
+		var safety = document.querySelector('.card-safety__item');
+		var regexSafety = /^([0-9]{3})+$/;
+
+		if (!regexSafety.test(safety.value)) {
+
+			this.errorSignal(safety, false);
+			this.errorArr.push(safety);
+
+		} else {
+
+			this.errorSignal(safety, true);
+
+		}
+	},
+
+	validateOwner: function() {
+
+		var owner = document.querySelector('.card-owner__item');
+		var regexOwner = /[^a-z ]/i;
+
+		if (owner.value == '' || regexOwner.test(owner.value)) {
+
+			this.errorSignal(owner, false);
+			this.errorArr.push(owner);
+
+		} else {
+
+			this.errorSignal(owner, true);
+
+		}
+
+		owner.value = owner.value.toUpperCase();
+
+	},
+
+	errorSignal: function(item, bool) {
+
+		bool ? item.classList.remove('js-error') : item.classList.add('js-error');
+		
+	}
+
+};
+
+;(function() {
 	var burger = document.getElementById('burger');
 
 	burger.addEventListener('click', function() {
 		document.body.classList.toggle('open-menu');
 	});
-})();
-
-
-// Валидация формы
-(function() {
-	
-	var cardsNumber = document.querySelectorAll('.card-number input');
-	var cardsNumberWrap = cardsNumber[1].parentNode;
-	var formBtn = document.querySelectorAll('.payment-form__button');
-	var paymentForm = document.getElementById('payment-form');
-	var regexCard = /^([0-9]{4})+$/;
-	var select = document.querySelectorAll('.card-validity__select');
-	var cvc = document.querySelector('.card-safety__item');
-	var regexCvc = /^([0-9]{3})+$/;
-	var owner = document.querySelector('.card-owner__item');
-	var regexOwner= /^([a-zA-Z]+)/;
-	var arr = [];
-
-	paymentForm.addEventListener('submit', function(e) {
-
-		e.preventDefault();
-
-		validateForm();
-
-	});
-
-	//Валидация всей формы
-
-	function validateForm() {
-		validateCard();
-		validateSelect();
-		validateCvc();
-		validateOwner();
-
-		if ( (validateCard() == true && validateSelect() == true && validateCvc() == true && validateOwner() == true) == true) {
-			paymentForm.submit();
-		} 
-	}
-
-	//Проверка поля ввода номера карты
-
-	function validateCard() {
-		var callResult = [];
-		for(var i = 0; i < cardsNumber.length; i++) {
-			
-			resetError(cardsNumber[i]);
-
-			if ( (cardsNumber[i].value == '') || (!regexCard.test(cardsNumber[i].value)) ) {
-				cardsNumber[i].classList.add('js-error');
-				callResult.push(i);
-			}
-
-		}
-
-		if (callResult.length != 0) {
-			return false;
-		} else {
-			return true;
-		}
-		
-	}
-
-	//Сброс ошибки
-
-	function resetError(item) {
-
-		if (item.classList.contains('js-error')) {
-
-			item.classList.remove('js-error');
-
-		}
-	}
-
-	//Проверка поля ввода даты
-
-	function validateSelect() {
-		var callResult = [];
-		for(var i = 0; i < select.length; i++) {
-
-			resetError(select[i]);
-
-			if (select[i].value == 'default') {
-				select[i].classList.add('js-error');
-				callResult.push(i);
-			}
-		}
-
-		if (callResult.length != 0) {
-			return false;
-		} else {
-			return true;
-		}
-
-	}
-	
-	//Проверка поля ввода защитного кода
-
-	function validateCvc() {
-
-		resetError(cvc);
-
-		if ( (cvc.value == '') || (!regexCvc.test(cvc.value)) ) {
-			cvc.classList.add('js-error');
-			return false;
-		} else {
-			return true;
-		}
-	}
-
-	//Проверка поля ввода имени и фамилии
-
-	function validateOwner() {
-
-		resetError(owner);
-
-		if ( owner.value.length < 4 || (!regexOwner.test(owner.value)) ) {
-			owner.classList.add('js-error');
-			return false;
-		} else {
-			return true;
-		}
-
-	}
-
 })();
