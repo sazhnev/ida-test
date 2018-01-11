@@ -98,8 +98,6 @@ var myFunc = {
 
 		}
 
-		owner.value = owner.value.toUpperCase();
-
 	},
 
 	errorSignal: function(item, bool) {

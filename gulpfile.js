@@ -11,23 +11,23 @@ var sassOptions = {
 };
 
 gulp.task('sass', function() {
-	return gulp.src('app/sass/main.sass')
+	return gulp.src('sass/main.sass')
 	.pipe(sass(sassOptions))
 	.pipe(autoprefixer(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], { cascade: true }))
-	.pipe(gulp.dest('app/css'))
+	.pipe(gulp.dest('css'))
 	.pipe(browserSync.reload({stream: true}))
 });
 
 gulp.task('browser-sync', function() {
     browserSync.init({
         server: {
-            baseDir: "app"
+            baseDir: "./"
         },
         notify: false
     });
 });
 
 gulp.task('watch', ['browser-sync'], function() {
-	gulp.watch('app/sass/**/*.sass', ['sass']);
-	gulp.watch('app/**/*.html', browserSync.reload);
+	gulp.watch('sass/**/*.sass', ['sass']);
+	gulp.watch('**/*.html', browserSync.reload);
 });
